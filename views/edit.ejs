@@ -1,0 +1,49 @@
+<!-- views/edit.ejs - Edit Chat Message Form -->
+<!-- This page allows users to edit existing chat messages -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">                                            <!-- Set character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Make page responsive -->
+    <title>edit chat</title>                                         <!-- Page title for browser tab -->
+</head>
+
+<body>
+    <!-- Main heading for edit page -->
+    <h3>Edit chat</h3>                                               <!-- Shows user this is the edit page -->
+
+    <br><br><br>                                                     <!-- Add vertical spacing -->
+    
+    <!-- Display the chat ID being edited -->
+    <!-- chats._id is the MongoDB document ID passed from the server -->
+    <p>Edit chat id: <%= chats._id %></p>                           <!-- Shows which chat is being edited -->
+
+    <!-- Section heading for chat details -->
+    <h5>chat details:</h5>                                          <!-- Subheading for chat information -->
+    <br>                                                            <!-- Line break for spacing -->
+    
+    <!-- Display current chat details before editing -->
+    <!-- Shows sender and receiver information in a readable format -->
+    <p>this message <span><%= chats.from %></span> sent to <span><%= chats.to %></span>.</p>
+
+    <!-- Form to submit edited message -->
+    <!-- action="/chats/<%= chats._id %>?_method=PUT" uses method override for PUT request -->
+    <!-- method="POST" is the actual HTTP method, but _method=PUT overrides it -->
+    <form action="/chats/<%= chats._id %>?_method=PUT" method="POST">
+        
+        <!-- Textarea pre-populated with current message content -->
+        <!-- name="message" matches the field expected by the server -->
+        <!-- rows="5" cols="50" sets the textarea size -->
+        <!-- <%= chats.message %> displays current message for editing -->
+        <textarea name="message" id="message" rows="5" cols="50"><%= chats.message %></textarea>
+        
+        <!-- Submit button to save changes -->
+        <!-- type="submit" submits the form when clicked -->
+        <button type="submit">edit</button>                          <!-- Button to save the edited message -->
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!-- views/new.ejs - New Chat Creation Form -->
+<!-- This page contains a form to create new chat messages -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">                                            <!-- Set character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Make page responsive -->
+    <title>new message</title>                                       <!-- Page title for browser tab -->
+</head>
+
+<body>
+    <!-- Main heading for the page -->
+    <h3>new message creating...</h3>                                  <!-- Shows user what this page is for -->
+    
+    <!-- Form to submit new chat message -->
+    <!-- POST method sends data to server, action="/chats" sends to create route -->
+    <form method="POST" action="/chats">
+        
+        <!-- Input field for sender name -->
+        <!-- name="from" creates form field that matches our database schema -->
+        <input type="text" name="from" placeholder="Who are you?">   <!-- Text input for sender identification -->
+        <br>                                                         <!-- Line break for visual spacing -->
+        
+        <!-- Textarea for message content -->
+        <!-- name="message" matches the message field in our chat schema -->
+        <textarea name="message" id="message" placeholder="enter message..."></textarea> <!-- Multi-line text input -->
+        <br>                                                         <!-- Line break for visual spacing -->
+        
+        <!-- Input field for receiver name -->
+        <!-- name="to" matches the 'to' field in our database schema -->
+        <input type="text" name="to" placeholder="add reciever...">  <!-- Text input for receiver identification -->
+        <br>                                                         <!-- Line break for visual spacing -->
+        
+        <!-- Submit button to send form data -->
+        <!-- type="submit" makes this button submit the form when clicked -->
+        <button id="submit">submit</button>                          <!-- Button to submit the form data -->
+    </form>
+</body>
+
+</html>
