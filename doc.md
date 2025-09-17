@@ -142,6 +142,6 @@ Dynamic content rendering using embedded JavaScript templates for displaying cha
 
 ---
 
-**Created by**: Your Name  
+**Created by**: pawar sudharshan
 **Date**: September 2025  
 **Version**: 1.0
